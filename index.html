@@ -16,7 +16,7 @@
     </style>
 </head>
 
-<body class="bg-dark text-white">
+<body class="bg-dark text-white" style="font-family: 'arial';">
     <div class="container row text-center p-5 mx-auto">
         <h1 class="heading mb-5" id="title">Data Entry</h1>
         <div class="col-md-12" id="formDiv">
@@ -69,11 +69,11 @@
         </form>
         </div>
 
-        <div id="filterDiv" class="col-md-10 mx-auto">
+        <div id="filterDiv" class="col-md-10 mx-auto mb-2 hidden">
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Id/Name/City/Phone/Email" aria-label="Search">
-                <button class="btn btn-outline-success col-md-2" type="submit">Filter</button>
-              </form>
+                <input id="filterInp" class="form-control me-2" type="search" placeholder="Id/Name/City/Phone/Email" aria-label="Search">
+                <button id="filterBtn" class="btn btn-success col-md-2" type="button">Filter</button>
+            </form>
         </div>
         
         <div id="dataTable" class="mx-auto col-md-10 hidden">
@@ -87,6 +87,9 @@
                         <th scope="col">Email</th>
                     </tr>
                 </thead>
+                <tbody id="tableBody">
+
+                </tbody>
             </table>
                             
         </div>

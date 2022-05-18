@@ -28,11 +28,11 @@ $("#submitButton").one("click", function (e) {
     .get();
 
   $("#dataTable").removeClass("hidden");
+  $("#filterDiv").removeClass("hidden");
 
   for (let i = 0; i < 5; i++) {
-    $("#dataTable table").append(
-      "<tbody>" +
-        "<tr>" +
+    $("#dataTable table tbody").append(
+      "<tr>" +
         "<td>" +
         id[i] +
         "</td>" +
@@ -48,8 +48,20 @@ $("#submitButton").one("click", function (e) {
         "<td>" +
         email[i] +
         "</td>" +
-        "</tr>" +
-        "</tbody>"
+        "</tr>"
     );
   }
+
+  $("#filterDiv button").on("click", function (e) {
+    e.preventDefault();
+    
+
+    var value = $("#filterInp").val().toLowerCase();
+    $("#tableBody tr").filter(function () {
+     
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+
 });
+
